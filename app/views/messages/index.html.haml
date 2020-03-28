@@ -1,0 +1,69 @@
+.wrapper
+
+  .side-bar
+
+    .side-bar__user-name
+      %ul.side-bar__user-name__box
+        %li.side-bar__user-name__box__name
+          yamazaki
+        %li.side-bar__user-name__box__menu
+          %a1.side-bar__user-name__box__menu__new-group
+          = link_to "#" do
+            = icon('fas', 'edit')
+          %a2.side-bar__user-name__box__menu__edit-user
+          = link_to "#" do
+            = icon('fas', 'cog')
+
+    .side-bar__group-list
+      %ul.side-bar__group-list__group
+        %li.side-bar__group-list__group__group-name
+          73g
+        %li.side-bar__group-list__group__message
+          おはよう
+
+      %ul.side-bar__group-list__group
+        %li.side-bar__group-list__group__group-name
+          74g
+        %li.side-bar__group-list__group__message
+          こんばんわ
+
+  .chat-main
+
+    .chat-main__group-info
+      .chat-main__group-info__left-content
+        .group-name
+          73g
+        .member
+          Member: yamazaki
+      .chat-main__group-info__right-content
+        %a.edit-button
+          = link_to "Edit", "#" 
+
+    .chat-main__message-list
+      .chat-main__message-list__message-info
+        .upper
+          .sender
+            yamazaki
+          .date
+            2020/03/26(Thu) 23:09:36
+        .message
+          おーい
+      .chat-main__message-list__message-info
+        .upper
+          .sender
+            mitsuhiko
+          .date
+            2020/03/26(Thu) 23:09:36
+        .message
+          やあ
+
+    .chat-main__message-form
+      .chat-main__message-form__input
+        %input.login-input-text{:name => "message", :placeholder => "type a message", :type => "text", :value => "" }
+        .chat-main__message-form__input__photo-icon
+          %label{class: "ptoto-icon"}
+            = icon('far', 'image' )
+            %input{type: "file", class:"image-file"}
+      .chat-main__message-form__send-button
+        %a.edit-button
+          = link_to "Send", "#" 
