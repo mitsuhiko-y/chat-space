@@ -1,0 +1,23 @@
+
+.side-bar
+
+  .side-bar__user-name
+    %ul.side-bar__user-name__box
+      %li.side-bar__user-name__box__name
+        = current_user.name
+      %li.side-bar__user-name__box__menu
+      %a1.side-bar__user-name__box__menu__new-group
+        = link_to new_group_path do
+          = icon('fas', 'edit')
+      %a2.side-bar__user-name__box__menu__edit-user
+        = link_to edit_user_path(current_user.id) do
+          = icon('fas', 'cog')
+
+  .side-bar__group-list
+    - current_user.groups.each do |group|
+      .group
+        = link_to "/groups/#{group.id}/messages" do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
